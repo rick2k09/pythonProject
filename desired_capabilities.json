@@ -1,0 +1,12 @@
+{
+  "platformName": "Android",
+  "deviceName": "3d9731a9",
+  "appPackage": "com.cyberlink.youcammakeup",
+  "appActivity": "com.cyberlink.youcammakeup.activity.SplashActivity",
+  "platformVersion": "11.0",
+  "ignoreHiddenApiPolicyError": true,
+  "noReset": true,
+  "autoGrantPermissions": true,
+  "enforceAppInstall": true,
+  "newCommandTimeout": "0"
+}
