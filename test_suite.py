@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # suite.addTests(test2)
 
     timestr = time.strftime('%Y%m%d', time.localtime(time.time()))  # 本地日期作為報告名字
-    filename = '/Users/hyde/unittest_server/YMK_unit_test/testreport/'  # 文件名字及保存路徑
+    filename = 'testreport/'  # 文件名字及保存路徑
     fp = open(filename + (timestr + '.html'), 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Result', description='Test Report： ')
     # runner = HTMLReport.TestRunner(title='Test Result', description='Test Report： ')
