@@ -2,8 +2,17 @@ import unittest
 import time
 from htmltestrunner import HTMLTestRunner
 from YMK_unit_test import MyTestCase
+import shutil
+import os
 
 if __name__ == '__main__':
+    source = 'testreport/'
+    destination = '/Users/hyde/unittest_server/YMK_unit_test/testreport/'
+    files = os.listdir(source)
+    for f in files:
+        if not f.startswith('.') and os.path.isfile(os.path.join(source, f)):
+            new_path = shutil.move(f"{source}/{f}", destination)
+            print(new_path)
     # unittest.main()
     # suite = unittest.TestLoader().loadTestsFromTestCase(MyTestCase)
     # unittest.TextTestRunner(verbosity=2).run(suite)
