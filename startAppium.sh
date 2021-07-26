@@ -1,1 +1,1 @@
-nohup node /Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js >>appium.log 2>&1 &
+nohup appium --address 127.0.0.1 --port 4723 --session-override --log-timestamp --local-timezone  >> appium.log 2>&1&
