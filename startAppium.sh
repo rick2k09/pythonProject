@@ -1,1 +1,1 @@
-sudo appium --address 127.0.0.1 --port 4723 --log-timestamp --local-timezone  >> appium.log 2>&1 &
+appium --address 127.0.0.1 --port 4723 --log-timestamp --local-timezone  >> appium.log 2>&1 &
