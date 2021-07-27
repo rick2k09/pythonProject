@@ -17,7 +17,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self):
         with open('desired_capabilities.json') as json_file:
             desired_caps = json.load(json_file)
-        self.driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
+        self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
         self.driver.implicitly_wait(3)
 
     # Go to Secrect page
