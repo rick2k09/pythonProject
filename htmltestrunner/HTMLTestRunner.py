@@ -561,11 +561,11 @@ class Template_mixin(object):
          <!-- <button class="btn btn-default" onclick='javascript:showCase(0)'>Summary</button> -->
         <!--<button class="btn btn-default" onclick='javascript:showCase(1)'>Failed</button>-->
         <!--<button class="btn btn-default" onclick='javascript:showCase(2)'>Total</button>-->
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>Primary %(passrate)s </a>
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>Passrate %(passrate)s </a>
         <a class="btn btn-warning" onclick='javascript:showCase(4)'>Error %(error)s </a>
-        <a class="btn btn-danger" onclick='javascript:showCase(1)'>Failed  %(fail)s </a>
-        <a class="btn btn-success" onclick='javascript:showCase(2)'>Success %(Pass)s </a>
-        <a class="btn btn-info" onclick='javascript:showCase(3)'>Info %(count)s </a>  
+        <a class="btn btn-danger" onclick='javascript:showCase(1)'>Fail  %(fail)s </a>
+        <a class="btn btn-success" onclick='javascript:showCase(2)'>Pass %(Pass)s </a>
+        <a class="btn btn-info" onclick='javascript:showCase(3)'>Count %(count)s </a>  
 
     </div>
     <p></p>
