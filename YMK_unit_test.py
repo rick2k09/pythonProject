@@ -1,19 +1,23 @@
+import os,sys
+dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(dir)
+sys.path.append("/Users/hyde/pythonProject/venv/lib/site-packages")
 import unittest
 from appium import webdriver
 import json
 import time
 from htmltestrunner import HTMLTestRunner
-import HTMLReport
-import test_SendReport
+# import HTMLReport
+# import test_SendReport
 
-ip = "http://192.168.1.116:8000/config.json"
+ip = "http://192.168.0.206:8000/config.json"
 
 class MyTestCase(unittest.TestCase):
     # Input Device setting
     def setUp(self):
         with open('desired_capabilities.json') as json_file:
             desired_caps = json.load(json_file)
-        self.driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
+        self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
         self.driver.implicitly_wait(3)
 
     # Go to Secrect page
@@ -41,9 +45,9 @@ class MyTestCase(unittest.TestCase):
         # Image Upload
         start = time.time()  # 記錄開始套圖上傳的時間
         image_int = 0
-        while image_int is 0: #try until images start upload
+        while image_int == 0: # try until images start upload
             image_count = self.driver.find_element_by_id("com.cyberlink.youcammakeup:id/imageCountTextView").text  # 抓出圖片數量
-            image_int = int(image_count)  #算出case id 的個數
+            image_int = int(image_count)  # 算出case id 的個數
         all_case_id = self.driver.find_element_by_id("com.cyberlink.youcammakeup:id/testIdsTextView").text  # 抓出case id
         case_id = all_case_id.split(",")  # 把all case id 變成一個list
         case_count = len(case_id)  # 算出case id 的個數
@@ -59,20 +63,20 @@ class MyTestCase(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    #unittest.main()
+    unittest.main()
     # suite = unittest.TestLoader().loadTestsFromTestCase(MyTestCase)
     # unittest.TextTestRunner(verbosity=2).run(suite)
-    suite = unittest.TestSuite()
-    test1 = unittest.TestLoader().loadTestsFromTestCase(MyTestCase)
-    test2 = unittest.defaultTestLoader.discover('./', pattern='test_ImageCompare.py')
-    #suite.addTests([test1, test2])
-    suite.addTests(test2)
+    # suite = unittest.TestSuite()
+    # test1 = unittest.TestLoader().loadTestsFromTestCase(MyTestCase)
+    # test2 = unittest.defaultTestLoader.discover('./', pattern='test_ImageCompare.py')
+    # # suite.addTests([test1, test2])
+    # suite.addTests(test2)
 
-    timestr = time.strftime('%Y%m%d', time.localtime(time.time()))  # 本地日期作為報告名字
-    filename = 'C:/Users/PERFECT/Documents/testreport/'  # 文件名字及保存路徑
-    fp = open(filename + (timestr + '.html'), 'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Result', description='Test Report： ')
-    #runner = HTMLReport.TestRunner(title='Test Result', description='Test Report： ')
-    runner.run(suite)
-    fp.close()
-    #test_SendReport.send(filename, timestr)
+    # timestr = time.strftime('%Y%m%d', time.localtime(time.time()))  # 本地日期作為報告名字
+    # filename = '/testreport/'  # 文件名字及保存路徑
+    # fp = open(filename + (timestr + '.html'), 'wb')
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Result', description='Test Report： ')
+    # # runner = HTMLReport.TestRunner(title='Test Result', description='Test Report： ')
+    # runner.run(suite)
+    # fp.close()
+    # test_SendReport.send(filename, timestr)
