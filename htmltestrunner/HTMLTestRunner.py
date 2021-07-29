@@ -342,7 +342,7 @@ class Template_mixin(object):
             xAxis: [
                 {
                     type: 'category',
-                    data: [' 第一次','第二次','第三次','第四次','第五次','第六次','第七次','第八次','第九次','第十次'],
+                    data: ['First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth','Ninth','Tenth'],
                     axisPointer: {
                         type: 'shadow'
                     }
@@ -351,7 +351,7 @@ class Template_mixin(object):
             yAxis: [
                 {
                     type: 'value',
-                    name: '百分比',
+                    name: 'Percentage',
                     min: 0,
                     max: 100,
                     interval: 20,
@@ -361,7 +361,7 @@ class Template_mixin(object):
                 },
                 {
                     type: 'value',
-                    name: '成功率',
+                    name: 'Success rate',
                     min: 0,
                     max: 10,
                     interval: 2,
@@ -399,7 +399,7 @@ class Template_mixin(object):
             // 指定图表的配置项和数据
             var option = {
                 title : {
-                    text: '测试执行情况',
+                    text: 'Test execution status',
                     x:'center'
                 },
                 tooltip : {
@@ -413,7 +413,7 @@ class Template_mixin(object):
                 },
                 series : [
                     {
-                        name: '测试执行情况',
+                        name: 'Test execution status',
                         type: 'pie',
                         radius : '60%%',
                         center: ['50%%', '60%%'],
@@ -558,14 +558,14 @@ class Template_mixin(object):
 
     REPORT_TMPL = """
     <div class="btn-group btn-group-sm">
-         <!-- <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button> -->
-        <!--<button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>-->
-        <!--<button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>-->
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要 %(passrate)s </a>
-        <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误 %(error)s </a>
-        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败  %(fail)s </a>
-        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过 %(Pass)s </a>
-        <a class="btn btn-info" onclick='javascript:showCase(3)'>所有 %(count)s </a>  
+         <!-- <button class="btn btn-default" onclick='javascript:showCase(0)'>Summary</button> -->
+        <!--<button class="btn btn-default" onclick='javascript:showCase(1)'>Failed</button>-->
+        <!--<button class="btn btn-default" onclick='javascript:showCase(2)'>Total</button>-->
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>Primary %(passrate)s </a>
+        <a class="btn btn-warning" onclick='javascript:showCase(4)'>Error %(error)s </a>
+        <a class="btn btn-danger" onclick='javascript:showCase(1)'>Failed  %(fail)s </a>
+        <a class="btn btn-success" onclick='javascript:showCase(2)'>Success %(Pass)s </a>
+        <a class="btn btn-info" onclick='javascript:showCase(3)'>Info %(count)s </a>  
 
     </div>
     <p></p>
