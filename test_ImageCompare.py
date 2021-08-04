@@ -1,7 +1,7 @@
 import os,sys
-dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(dir)
-sys.path.append("/Users/hyde/pythonProject/venv/lib/site-packages")
+# dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append(dir)
+# sys.path.append("/Users/hyde/pythonProject/venv/lib/site-packages")
 import unittest
 from wand.image import Image
 import time
